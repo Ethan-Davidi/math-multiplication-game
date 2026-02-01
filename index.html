@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>לוח הכפל</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="stats hebrew" dir="rtl">
+        <span id="attempts">ניסיונות: 0</span>
+        <span id="mastered">נפתרו: 0/0</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="exerciseRow">
+        <h1 id="exercise">6 × 10</h1>
+      </div>
+
+      <p id="feedback" class="feedback hebrew" dir="rtl"></p>
+
+      <div id="grid" class="grid"></div>
+
+      <button id="nextBtn" class="next" type="button" disabled>הבא</button>
+
+      <div id="finalPanel" class="final hidden hebrew" dir="rtl" aria-live="polite">
+        <h2>🎉 סיימנו!</h2>
+
+        <p id="finalScoreLine" class="finalScoreLine"></p>
+
+        <div id="practiceBlock" class="practiceBlock hidden">
+          <p class="practiceTitle">תרגילים שכדאי לתרגל שוב:</p>
+          <ul id="practiceList" class="practiceList"></ul>
+        </div>
+
+        <p id="perfectRun" class="perfectRun hidden">אלופה! בלי טעויות 🎉</p>
+
+        <button id="restartBtn" class="next" type="button">שחקי שוב</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
