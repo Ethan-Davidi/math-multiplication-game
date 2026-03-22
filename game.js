@@ -1,7 +1,7 @@
 const $ = (id) => document.getElementById(id);
 
 // ---- Config ----
-const MAX_QUESTIONS_PER_ROUND = 20;
+const MAX_QUESTIONS_PER_ROUND = 40;
 
 // ---- Helpers ----
 function shuffle(arr) {
@@ -65,7 +65,7 @@ let totalExercises = 0;
 // key: "6×10" -> value: 60
 let missedExercisesMap = new Map();
 
-// Keep current round set so we can lookup answers if needed
+// Keep current round set
 let roundSet = [];
 
 // ---- UI ----
@@ -92,7 +92,6 @@ function buildChoices(correctAnswer) {
 }
 
 function sortExerciseLabels(a, b) {
-  // a/b look like "6×10"
   const [ax, bx] = a.split("×").map(n => parseInt(n.trim(), 10));
   const [ay, by] = b.split("×").map(n => parseInt(n.trim(), 10));
   if (ax !== ay) return ax - ay;
@@ -194,7 +193,7 @@ function startNewGame() {
     return;
   }
 
-  // choose up to 20 exercises for this round
+  // choose up to 40 exercises for this round
   roundSet = sample(EXERCISES, MAX_QUESTIONS_PER_ROUND);
 
   queue = shuffle(roundSet);
